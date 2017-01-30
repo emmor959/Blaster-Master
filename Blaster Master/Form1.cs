@@ -38,8 +38,7 @@ namespace BlasterMaster
     // The author accepts no liability for anything that may result from the usage of 
     // this product. This notice must not be removed or altered. 
     // ______________________________________________________________________________
-
-
+    
     public partial class Form1 : Form
     {
         // APIs native Win32
