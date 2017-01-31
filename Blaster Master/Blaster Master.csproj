@@ -61,6 +61,7 @@
     <Compile Include="clsPickups.cs" />
     <Compile Include="clsPlayer.cs" />
     <Compile Include="clsPlayerBullet.cs" />
+    <Compile Include="clsPlayerMyBullet.cs" />
     <Compile Include="clsScroll.cs" />
     <Compile Include="clsSound.cs" />
     <Compile Include="clsStars.cs" />
@@ -187,7 +188,7 @@
     <None Include="Resources\playerB.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\playerBullet.bmp" />
+    <None Include="Resources\playerBullet1.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sheildA.bmp" />
@@ -200,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\title.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerBullet.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
