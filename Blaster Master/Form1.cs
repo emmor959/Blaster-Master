@@ -922,7 +922,7 @@ namespace BlasterMaster
                                                
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-                                                playerbullet[i, 1] = new clsPlayerBullet(x + 10, y + 10);
+                                                playerbullet[i, 1] = new clsPlayerMyBullet(x + 10, y + 10);
                                                 playerbullet[i, 2] = new clsPlayerBullet(x - 15, y + 10);
 
                                                 // Dec num of fire round remaining
