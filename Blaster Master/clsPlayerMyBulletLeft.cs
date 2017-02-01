@@ -9,14 +9,14 @@ using System.Drawing.Imaging;
 
 namespace BlasterMaster
 {
-    public class clsPlayerMyBullet : clsPlayerBullet
+    public class clsPlayerMyBulletLeft : clsPlayerBullet
     {
 
         // Obj refs and instances
         private System.Drawing.Bitmap bullet;
         private ImageAttributes ImagingAtt = new ImageAttributes();
 
-        public  clsPlayerMyBullet(int x, int y) : base(x, y)
+        public clsPlayerMyBulletLeft(int x, int y) : base(x, y)
         {
             //------------------------------------------------------------------------------------------------------------------
             // Purpose: Class constructor  
@@ -35,7 +35,7 @@ namespace BlasterMaster
 
             // Scroll bullets
             base.setY(base.getY() - 15);
-            base.setX(base.getX() + 5);
+            base.setX(base.getX() - 5);
             // Sync collision rect
             base.setRectX(base.getX() + 2);
             base.setRectY(base.getY());

@@ -923,7 +923,7 @@ namespace BlasterMaster
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
                                                 playerbullet[i, 1] = new clsPlayerMyBullet(x + 10, y + 10);
-                                                playerbullet[i, 2] = new clsPlayerBullet(x - 15, y + 10);
+                                                playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 15, y + 10);
 
                                                 // Dec num of fire round remaining
                                                 player.setX3FireAmmo(player.getX3FireAmmo() - 1);
@@ -936,10 +936,10 @@ namespace BlasterMaster
 
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-                                                playerbullet[i, 1] = new clsPlayerBullet(x + 10, y + 10);
-                                                playerbullet[i, 2] = new clsPlayerBullet(x - 15, y + 10);
-                                                playerbullet[i, 3] = new clsPlayerBullet(x + 20, y + 20);
-                                                playerbullet[i, 4] = new clsPlayerBullet(x - 25, y + 20);
+                                                playerbullet[i, 1] = new clsPlayerMyBullet(x + 5, y + 10);
+                                                playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 10, y + 10);
+                                                playerbullet[i, 3] = new clsPlayerMyBullet(x + 30, y + 20);
+                                                playerbullet[i, 4] = new clsPlayerMyBulletLeft(x - 35, y + 20);
 
                                                 // Dec num of fire round remaining
                                                 player.setX5FireAmmo(player.getX5FireAmmo() - 1);
