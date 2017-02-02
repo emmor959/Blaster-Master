@@ -30,3 +30,11 @@ C:\Users\emmor959\Desktop\master\Blaster Master\obj\Debug\Blaster Master.csproj.
 C:\Users\emmor959\Desktop\master\Blaster Master\obj\Debug\BlasterMaster.exe
 C:\Users\emmor959\Desktop\master\Blaster Master\obj\Debug\BlasterMaster.pdb
 C:\Users\emmor959\Desktop\master\Blaster Master\obj\Debug\Blaster Master.csprojResolveAssemblyReference.cache
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\bin\Debug\BlasterMaster.exe
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\bin\Debug\BlasterMaster.pdb
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\obj\Debug\Blaster Master.csprojResolveAssemblyReference.cache
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\obj\Debug\BlasterMaster.Form1.resources
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\obj\Debug\BlasterMaster.Properties.Resources.resources
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\obj\Debug\Blaster Master.csproj.GenerateResource.Cache
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\obj\Debug\BlasterMaster.exe
+C:\Users\emmor959\Desktop\Git-Hub Master Blaster\Blaster Master\obj\Debug\BlasterMaster.pdb

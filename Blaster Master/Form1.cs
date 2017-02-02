@@ -89,6 +89,8 @@ namespace BlasterMaster
         private int highScore;
         private int playerPivotPos = 61;
         private string playersName;
+        private int HitCount;
+        private int ShotCount;
 
         // Boolean
         private bool[] moveKeyPress = new bool[3];
@@ -913,18 +915,18 @@ namespace BlasterMaster
 
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-
+                                                ShotCount += 1;
                                                 // Bail out
                                                 bailOut = true;
                                                 break;
-
+                                                
                                             case 3: //:: x3 fire ::
                                                
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
                                                 playerbullet[i, 1] = new clsPlayerMyBullet(x + 10, y + 10);
                                                 playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 15, y + 10);
-
+                                                ShotCount += 3;
                                                 // Dec num of fire round remaining
                                                 player.setX3FireAmmo(player.getX3FireAmmo() - 1);
 
@@ -940,7 +942,7 @@ namespace BlasterMaster
                                                 playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 10, y + 10);
                                                 playerbullet[i, 3] = new clsPlayerMyBullet(x + 30, y + 20);
                                                 playerbullet[i, 4] = new clsPlayerMyBulletLeft(x - 35, y + 20);
-
+                                                ShotCount += 5;
                                                 // Dec num of fire round remaining
                                                 player.setX5FireAmmo(player.getX5FireAmmo() - 1);
 
@@ -954,7 +956,7 @@ namespace BlasterMaster
                                             break;
                                         }
                                     }
-                                }
+                               }
 
                                 // Play snd effect
                                 if (!sndEngineError)
@@ -1022,7 +1024,8 @@ namespace BlasterMaster
                     }
                     else //- Game over - //
                     {
-                        s = "GAME OVER!";
+                        // FindMe
+                        s = "GAME OVER! " + (HitCount / ShotCount) + "%";
                         enPlayerSprite = 1;
                     }
 
@@ -1338,6 +1341,12 @@ namespace BlasterMaster
 
                                         // Dispose of player bullet instance after collision
                                         playerbullet[i, c] = null;
+
+                                        // FindMe
+                                        HitCount += 1;
+
+
+
                                     }
                                 }
                             }
