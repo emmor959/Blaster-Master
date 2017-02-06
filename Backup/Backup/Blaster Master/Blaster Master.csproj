@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,11 +12,6 @@
     <AssemblyName>BlasterMaster</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,8 +56,6 @@
     <Compile Include="clsPickups.cs" />
     <Compile Include="clsPlayer.cs" />
     <Compile Include="clsPlayerBullet.cs" />
-    <Compile Include="clsPlayerMyBullet.cs" />
-    <Compile Include="clsPlayerMyBulletLeft.cs" />
     <Compile Include="clsScroll.cs" />
     <Compile Include="clsSound.cs" />
     <Compile Include="clsStars.cs" />
@@ -202,12 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\title.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\playerMyBullet.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PickupSpecial.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

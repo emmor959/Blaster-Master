@@ -27,7 +27,6 @@ namespace BlasterMaster
         private int sheildTime;
         private int x3FireAmmo;
         private int x5FireAmmo;
-        private int specialAmmo;
         private int sheildX;
         private int sheildY;
         private int playerAni;
@@ -209,14 +208,6 @@ namespace BlasterMaster
             //------------------------------------------------------------------------------------------------------------------
 
             this.x3FireAmmo = x3FireAmmo;
-        }
-        public void SetSpecialAmmo(int specialAmmo)
-        {
-            this.specialAmmo = specialAmmo;
-        }
-        public int GetSpecialAmmo()
-        {
-            return this.specialAmmo;
         }
 
         public int getX3FireAmmo()

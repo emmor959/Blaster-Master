@@ -38,7 +38,8 @@ namespace BlasterMaster
     // The author accepts no liability for anything that may result from the usage of 
     // this product. This notice must not be removed or altered. 
     // ______________________________________________________________________________
-    
+
+
     public partial class Form1 : Form
     {
         // APIs native Win32
@@ -89,8 +90,6 @@ namespace BlasterMaster
         private int highScore;
         private int playerPivotPos = 61;
         private string playersName;
-        private int HitCount;
-        private int ShotCount;
 
         // Boolean
         private bool[] moveKeyPress = new bool[3];
@@ -112,7 +111,7 @@ namespace BlasterMaster
 
         // Class refs
         private clsVectorScroll[] vectorScroll = new clsVectorScroll[10];
-        private clsPlayerBullet[,] playerbullet = new clsPlayerBullet[8, 5];
+        private clsPlayerBullet[,] playerbullet = new clsPlayerBullet[6, 5];
         private clsInvader[] invaders = new clsInvader[60];
         private clsParticle[] particle = new clsParticle[60];
         private clsStars[] stars = new clsStars[100];
@@ -905,7 +904,7 @@ namespace BlasterMaster
                                 shootKeyUP = false;
 
                                 // Create new instance of a player bullet
-                                for (i = 0; i <= 7; i++)
+                                for (i = 0; i <= 5; i++)
                                 {
                                     if (playerbullet[i, 0] == null)
                                     {
@@ -915,18 +914,18 @@ namespace BlasterMaster
 
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-                                                ShotCount += 1;
+
                                                 // Bail out
                                                 bailOut = true;
                                                 break;
-                                                
+
                                             case 3: //:: x3 fire ::
                                                
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-                                                playerbullet[i, 1] = new clsPlayerMyBullet(x + 10, y + 10);
-                                                playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 15, y + 10);
-                                                ShotCount += 3;
+                                                playerbullet[i, 1] = new clsPlayerBullet(x + 10, y + 10);
+                                                playerbullet[i, 2] = new clsPlayerBullet(x - 15, y + 10);
+
                                                 // Dec num of fire round remaining
                                                 player.setX3FireAmmo(player.getX3FireAmmo() - 1);
 
@@ -938,21 +937,17 @@ namespace BlasterMaster
 
                                                 // Create new instances
                                                 playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-                                                playerbullet[i, 1] = new clsPlayerMyBullet(x + 5, y + 10);
-                                                playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 10, y + 10);
-                                                playerbullet[i, 3] = new clsPlayerMyBullet(x + 30, y + 20);
-                                                playerbullet[i, 4] = new clsPlayerMyBulletLeft(x - 35, y + 20);
-                                                ShotCount += 5;
+                                                playerbullet[i, 1] = new clsPlayerBullet(x + 10, y + 10);
+                                                playerbullet[i, 2] = new clsPlayerBullet(x - 15, y + 10);
+                                                playerbullet[i, 3] = new clsPlayerBullet(x + 20, y + 20);
+                                                playerbullet[i, 4] = new clsPlayerBullet(x - 25, y + 20);
+
                                                 // Dec num of fire round remaining
                                                 player.setX5FireAmmo(player.getX5FireAmmo() - 1);
 
                                                 // Bail out
                                                 bailOut = true;
-                                                break;
-
-                                            case 7:
-                                                playerbullet[i, 3] = new clsPlayerMyBullet(x + 30, y + 20);
-                                                break;                                              
+                                                break;                                                 
                                         }
 
                                         if (bailOut == true)
@@ -960,7 +955,7 @@ namespace BlasterMaster
                                             break;
                                         }
                                     }
-                               }
+                                }
 
                                 // Play snd effect
                                 if (!sndEngineError)
@@ -1028,8 +1023,7 @@ namespace BlasterMaster
                     }
                     else //- Game over - //
                     {
-                        // FindMe
-                        s = "GAME OVER! " + (HitCount / ShotCount) + "%";
+                        s = "GAME OVER!";
                         enPlayerSprite = 1;
                     }
 
@@ -1232,12 +1226,6 @@ namespace BlasterMaster
                                     rect2.Width = invaders[j].getRectW();
                                     rect2.Height = invaders[j].getRectH();
 
-
-
-
-
-
-
                                     // Collision?
                                     if (rect1.IntersectsWith(rect2))
                                     {
@@ -1286,28 +1274,13 @@ namespace BlasterMaster
                                                 invaderDead = true;
                                                 score += 250;
 
+                                                // Drop pickup for killing this invader
 
-                                            //    int x;
-                                            //    int y;
-                                            //    x = player.getPivotX(playerPivotPos);
-                                            //    y = player.getPivotY(playerPivotPos);
-                                            //    for (i = 0; i <= 5; i++)
-                                            //    {
-                                             //       if (playerbullet[i, 0] == null)
-                                            //        {
-                                            //            playerbullet[i, 0] = new clsPlayerBullet(x - 2, y);
-                                            //            playerbullet[i, 1] = new clsPlayerMyBullet(x + 10, y + 10);
-                                            //            playerbullet[i, 2] = new clsPlayerMyBulletLeft(x - 15, y + 10);
-
-                                            //        }     // FindMe
-                                           //    }
-                                                        // Drop pickup for killing this invader
-
-                                                        if (pickup == null)
+                                                if (pickup == null)
                                                 {
                                                     // Fetch random pickup to drop
                                                     bool voidPickup = false;
-                                                    c = getRandomNumber(0, 4);
+                                                    c = getRandomNumber(0, 3);
 
                                                     switch (c)
                                                     {
@@ -1339,12 +1312,6 @@ namespace BlasterMaster
                                                                 voidPickup = true;
                                                             }
                                                             break;
-                                                        case 3:
-                                                            if (player.getFirePowerLevel() == 7)
-                                                            {
-                                                                voidPickup = true;
-                                                            }
-                                                            break;
                                                     }
 
                                                     // Create new instance of pickup to scroll
@@ -1371,36 +1338,7 @@ namespace BlasterMaster
                                         }
 
                                         // Dispose of player bullet instance after collision
-                                        try
-                                        {
-                                            int z;
-                                            if (playerbullet[i, c].GetType() == typeof(clsPlayerMyBullet))
-                                            {
-                                                for (z = 0; z <= 5; z++)
-                                                {
-                                                    if (playerbullet[i, 0] == null)
-                                                    {
-                                                        int x, y;
-                                                        x = player.getPivotX(playerPivotPos);
-                                                        y = player.getPivotY(playerPivotPos);
-
-                                                        playerbullet[z, 0] = new clsPlayerBullet(x - 2, y);
-                                                        playerbullet[z, 1] = new clsPlayerMyBullet(x + 10, y + 10);
-                                                        playerbullet[z, 2] = new clsPlayerMyBulletLeft(x - 15, y + 10);
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        catch
-                                        { playerbullet[i, c] = null; }
                                         playerbullet[i, c] = null;
-
-
-                                        // FindMe
-                                        HitCount += 1;
-
-
-
                                     }
                                 }
                             }
@@ -1465,13 +1403,6 @@ namespace BlasterMaster
                     player.setFirePower(1);
                 }
             }
-            if(player.getFirePowerLevel() == 7)
-            {
-                if(player.GetSpecialAmmo() <= 0)
-                {
-                    player.setFirePower(1);
-                }
-            }
 
             if (!levelCompleted)
             {
@@ -1516,10 +1447,6 @@ namespace BlasterMaster
                             case 2: // x5 power
                                 player.setFirePower(5);
                                 player.setX5FireAmmo(5);
-                                break;
-                            case 3:
-                                player.setFirePower(7);
-                                player.SetSpecialAmmo(5);
                                 break;
                         }
 
@@ -2033,7 +1960,7 @@ namespace BlasterMaster
 
             for (i = 0; i <= 4; i++)
             {
-//if (score > Convert.ToInt32(Top5PlayerScore[i]))
+                if (score > Convert.ToInt32(Top5PlayerScore[i]))
                 {
                     // Prompt player for their name
 
